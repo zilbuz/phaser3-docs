@@ -190,6 +190,9 @@ export class Parser {
                 }
                 ///////////////////////////////////////////////////////
 
+                if (!(<any>parent).members) {
+                    (<any>parent).members = [];
+                }
                 (<any>parent).members.push(obj);
                 (<any>obj)._parent = parent;
 
