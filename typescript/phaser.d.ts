@@ -419,43 +419,43 @@ declare type GameConfig = {
     /**
      * [description]
      */
-    antialias?: boolean;
+    "render.antialias"?: boolean;
     /**
      * [description]
      */
-    pixelArt?: boolean;
+    "render.pixelArt"?: boolean;
     /**
      * [description]
      */
-    autoResize?: boolean;
+    "render.autoResize"?: boolean;
     /**
      * [description]
      */
-    roundPixels?: boolean;
+    "render.roundPixels"?: boolean;
     /**
      * [description]
      */
-    transparent?: boolean;
+    "render.transparent"?: boolean;
     /**
      * [description]
      */
-    clearBeforeRender?: boolean;
+    "render.clearBeforeRender"?: boolean;
     /**
      * [description]
      */
-    premultipliedAlpha?: boolean;
+    "render.premultipliedAlpha"?: boolean;
     /**
      * [description]
      */
-    preserveDrawingBuffer?: boolean;
+    "render.preserveDrawingBuffer"?: boolean;
     /**
      * [description]
      */
-    failIfMajorPerformanceCaveat?: boolean;
+    "render.failIfMajorPerformanceCaveat"?: boolean;
     /**
      * "high-performance", "low-power" or "default"
      */
-    powerPreference?: boolean;
+    "render.powerPreference"?: string;
     /**
      * [description]
      */
@@ -3552,22 +3552,22 @@ declare namespace Phaser {
             /**
              * Is this the first frame in an animation sequence?
              */
-            isFirst: boolean;
+            readonly isFirst: boolean;
 
             /**
              * Is this the last frame in an animation sequence?
              */
-            isLast: boolean;
+            readonly isLast: boolean;
 
             /**
              * A reference to the AnimationFrame that comes before this one in the animation, if any.
              */
-            prevFrame: Phaser.Animations.AnimationFrame;
+            readonly prevFrame: Phaser.Animations.AnimationFrame;
 
             /**
              * A reference to the AnimationFrame that comes after this one in the animation, if any.
              */
-            nextFrame: Phaser.Animations.AnimationFrame;
+            readonly nextFrame: Phaser.Animations.AnimationFrame;
 
             /**
              * Additional time (in ms) that this frame should appear for during playback.
@@ -3579,7 +3579,7 @@ declare namespace Phaser {
              * What % through the animation does this frame come?
              * This value is generated when the animation is created and cached here.
              */
-            progress: number;
+            readonly progress: number;
 
             /**
              * Generates a JavaScript object suitable for converting to JSON.
@@ -3761,7 +3761,7 @@ declare namespace Phaser {
          * 
          * The values stored within this object are read-only and should not be changed at run-time.
          */
-        config: Phaser.Boot.Config;
+        readonly config: Phaser.Boot.Config;
 
         /**
          * A reference to either the Canvas or WebGL Renderer that this Game is using.
@@ -3781,12 +3781,12 @@ declare namespace Phaser {
         /**
          * A flag indicating when this Game instance has finished its boot process.
          */
-        isBooted: boolean;
+        readonly isBooted: boolean;
 
         /**
          * A flag indicating if this Game is currently running its game step or not.
          */
-        isRunning: boolean;
+        readonly isRunning: boolean;
 
         /**
          * An Event Emitter which is used to broadcast game-level events from the global systems.
@@ -3956,6 +3956,286 @@ declare namespace Phaser {
              */
             constructor(GameConfig?: GameConfig);
 
+            /**
+             * [description]
+             */
+            readonly width: integer | string;
+
+            /**
+             * [description]
+             */
+            readonly height: integer | string;
+
+            /**
+             * [description]
+             */
+            readonly zoom: number;
+
+            /**
+             * [description]
+             */
+            readonly resolution: number;
+
+            /**
+             * [description]
+             */
+            readonly renderType: number;
+
+            /**
+             * [description]
+             */
+            readonly parent: any;
+
+            /**
+             * [description]
+             */
+            readonly canvas: HTMLCanvasElement;
+
+            /**
+             * [description]
+             */
+            readonly canvasStyle: string;
+
+            /**
+             * [description]
+             */
+            readonly sceneConfig: object;
+
+            /**
+             * [description]
+             */
+            readonly seed: string[];
+
+            /**
+             * [description]
+             */
+            readonly gameTitle: string;
+
+            /**
+             * [description]
+             */
+            readonly gameURL: string;
+
+            /**
+             * [description]
+             */
+            readonly gameVersion: string;
+
+            /**
+             * [description]
+             */
+            readonly inputKeyboard: boolean;
+
+            /**
+             * [description]
+             */
+            readonly inputKeyboardEventTarget: any;
+
+            /**
+             * [description]
+             */
+            readonly inputMouse: boolean | object;
+
+            /**
+             * [description]
+             */
+            readonly inputMouseEventTarget: any;
+
+            /**
+             * [description]
+             */
+            readonly inputMouseCapture: boolean;
+
+            /**
+             * [description]
+             */
+            readonly inputTouch: boolean;
+
+            /**
+             * [description]
+             */
+            readonly inputTouchEventTarget: any;
+
+            /**
+             * [description]
+             */
+            readonly inputTouchCapture: boolean;
+
+            /**
+             * [description]
+             */
+            readonly inputGamepad: boolean;
+
+            /**
+             * [description]
+             */
+            readonly disableContextMenu: boolean;
+
+            /**
+             * [description]
+             */
+            readonly audio: any;
+
+            /**
+             * [description]
+             */
+            readonly hideBanner: boolean;
+
+            /**
+             * [description]
+             */
+            readonly hidePhaser: boolean;
+
+            /**
+             * [description]
+             */
+            readonly bannerTextColor: string;
+
+            /**
+             * [description]
+             */
+            readonly bannerBackgroundColor: string[];
+
+            /**
+             * [description]
+             */
+            readonly fps: FPSConfig;
+
+            /**
+             * [description]
+             */
+            readonly antialias: boolean;
+
+            /**
+             * [description]
+             */
+            readonly pixelArt: boolean;
+
+            /**
+             * [description]
+             */
+            readonly autoResize: boolean;
+
+            /**
+             * [description]
+             */
+            readonly roundPixels: boolean;
+
+            /**
+             * [description]
+             */
+            readonly transparent: boolean;
+
+            /**
+             * [description]
+             */
+            readonly zoclearBeforeRenderom: boolean;
+
+            /**
+             * [description]
+             */
+            readonly premultipliedAlpha: boolean;
+
+            /**
+             * [description]
+             */
+            readonly preserveDrawingBuffer: boolean;
+
+            /**
+             * [description]
+             */
+            readonly failIfMajorPerformanceCaveat: boolean;
+
+            /**
+             * [description]
+             */
+            readonly powerPreference: string;
+
+            /**
+             * [description]
+             */
+            readonly backgroundColor: Phaser.Display.Color;
+
+            /**
+             * [description]
+             */
+            readonly preBoot: BootCallback;
+
+            /**
+             * [description]
+             */
+            readonly postBoot: BootCallback;
+
+            /**
+             * [description]
+             */
+            readonly physics: object;
+
+            /**
+             * [description]
+             */
+            readonly defaultPhysicsSystem: boolean;
+
+            /**
+             * [description]
+             */
+            readonly loaderBaseURL: string;
+
+            /**
+             * [description]
+             */
+            readonly loaderPath: string;
+
+            /**
+             * [description]
+             */
+            readonly loaderMaxParallelDownloads: integer;
+
+            /**
+             * [description]
+             */
+            readonly loaderCrossOrigin: string | undefined;
+
+            /**
+             * [description]
+             */
+            readonly loaderResponseType: string;
+
+            /**
+             * [description]
+             */
+            readonly loaderAsync: boolean;
+
+            /**
+             * [description]
+             */
+            readonly loaderUser: string;
+
+            /**
+             * [description]
+             */
+            readonly loaderPassword: string;
+
+            /**
+             * [description]
+             */
+            readonly loaderTimeout: integer;
+
+            /**
+             * [description]
+             */
+            readonly defaultPlugins: any;
+
+            /**
+             * [description]
+             */
+            readonly defaultImage: string;
+
+            /**
+             * [description]
+             */
+            readonly missingImage: string;
+
         }
 
         /**
@@ -4047,17 +4327,17 @@ declare namespace Phaser {
             /**
              * A reference to the Phaser.Game instance.
              */
-            game: Phaser.Game;
+            readonly game: Phaser.Game;
 
             /**
              * [description]
              */
-            raf: Phaser.DOM.RequestAnimationFrame;
+            readonly raf: Phaser.DOM.RequestAnimationFrame;
 
             /**
              * A flag that is set once the TimeStep has started running and toggled when it stops.
              */
-            started: boolean;
+            readonly started: boolean;
 
             /**
              * A flag that is set once the TimeStep has started running and toggled when it stops.
@@ -4065,7 +4345,7 @@ declare namespace Phaser {
              * the TimeStep is sent to sleep, where-as `started` remains `true`, only changing if
              * the TimeStep is actually stopped, not just paused.
              */
-            running: boolean;
+            readonly running: boolean;
 
             /**
              * The minimum fps rate you want the Time Step to run at.
@@ -4084,17 +4364,17 @@ declare namespace Phaser {
             /**
              * An exponential moving average of the frames per second.
              */
-            actualFps: integer;
+            readonly actualFps: integer;
 
             /**
              * [description]
              */
-            nextFpsUpdate: integer;
+            readonly nextFpsUpdate: integer;
 
             /**
              * The number of frames processed this second.
              */
-            framesThisSecond: integer;
+            readonly framesThisSecond: integer;
 
             /**
              * A callback to be invoked each time the Time Step steps.
@@ -4105,7 +4385,7 @@ declare namespace Phaser {
              * You can force the Time Step to use Set Timeout instead of Request Animation Frame by setting
              * the `forceSetTimeOut` property to `true` in the Game Configuration object. It cannot be changed at run-time.
              */
-            forceSetTimeOut: boolean;
+            readonly forceSetTimeOut: boolean;
 
             /**
              * [description]
@@ -4125,12 +4405,12 @@ declare namespace Phaser {
             /**
              * [description]
              */
-            frame: integer;
+            readonly frame: integer;
 
             /**
              * [description]
              */
-            inFocus: boolean;
+            readonly inFocus: boolean;
 
             /**
              * [description]
@@ -4857,7 +5137,7 @@ declare namespace Phaser {
                 /**
                  * The current Camera ID.
                  */
-                currentCameraId: number;
+                readonly currentCameraId: number;
 
                 /**
                  * An Array of the Camera objects being managed by this Camera Manager.
@@ -4971,12 +5251,12 @@ declare namespace Phaser {
                     /**
                      * The Camera this effect belongs to.
                      */
-                    camera: Phaser.Cameras.Scene2D.Camera;
+                    readonly camera: Phaser.Cameras.Scene2D.Camera;
 
                     /**
                      * Is this effect actively running?
                      */
-                    isRunning: boolean;
+                    readonly isRunning: boolean;
 
                     /**
                      * Has this effect finished running?
@@ -4984,18 +5264,18 @@ declare namespace Phaser {
                      * This is different from `isRunning` because it remains set to `true` when the effect is over,
                      * until the effect is either reset or started again.
                      */
-                    isComplete: boolean;
+                    readonly isComplete: boolean;
 
                     /**
                      * The direction of the fade.
                      * `true` = fade out (transparent to color), `false` = fade in (color to transparent)
                      */
-                    direction: boolean;
+                    readonly direction: boolean;
 
                     /**
                      * The duration of the effect, in milliseconds.
                      */
-                    duration: integer;
+                    readonly duration: integer;
 
                     /**
                      * If this effect is running this holds the current percentage of the progress, a value between 0 and 1.
@@ -5075,17 +5355,17 @@ declare namespace Phaser {
                     /**
                      * The Camera this effect belongs to.
                      */
-                    camera: Phaser.Cameras.Scene2D.Camera;
+                    readonly camera: Phaser.Cameras.Scene2D.Camera;
 
                     /**
                      * Is this effect actively running?
                      */
-                    isRunning: boolean;
+                    readonly isRunning: boolean;
 
                     /**
                      * The duration of the effect, in milliseconds.
                      */
-                    duration: integer;
+                    readonly duration: integer;
 
                     /**
                      * If this effect is running this holds the current percentage of the progress, a value between 0 and 1.
@@ -5164,17 +5444,17 @@ declare namespace Phaser {
                     /**
                      * The Camera this effect belongs to.
                      */
-                    camera: Phaser.Cameras.Scene2D.Camera;
+                    readonly camera: Phaser.Cameras.Scene2D.Camera;
 
                     /**
                      * Is this effect actively running?
                      */
-                    isRunning: boolean;
+                    readonly isRunning: boolean;
 
                     /**
                      * The duration of the effect, in milliseconds.
                      */
-                    duration: integer;
+                    readonly duration: integer;
 
                     /**
                      * The intensity of the effect. Use small float values. The default when the effect starts is 0.05.
@@ -8008,17 +8288,17 @@ declare namespace Phaser {
             /**
              * The color of this Color component, not including the alpha channel.
              */
-            color: number;
+            readonly color: number;
 
             /**
              * The color of this Color component, including the alpha channel.
              */
-            color32: number;
+            readonly color32: number;
 
             /**
              * The color of this Color component as a string which can be used in CSS color values.
              */
-            rgba: string;
+            readonly rgba: string;
 
             /**
              * The red color value, normalized to the range 0 to 1.
@@ -10457,7 +10737,7 @@ declare namespace Phaser {
                 /**
                  * `true` if the current animation is paused, otherwise `false`.
                  */
-                isPaused: boolean;
+                readonly isPaused: boolean;
                 /**
                  * Plays an Animation on the Game Object that owns this Animation Component.
                  * @param key The string-based key of the animation to play, as defined previously in the Animation Manager.
@@ -11296,17 +11576,17 @@ declare namespace Phaser {
                 /**
                  * [description]
                  */
-                rotation: number;
+                readonly rotation: number;
 
                 /**
                  * [description]
                  */
-                scaleX: number;
+                readonly scaleX: number;
 
                 /**
                  * [description]
                  */
-                scaleY: number;
+                readonly scaleY: number;
 
                 /**
                  * [description]
@@ -11509,25 +11789,25 @@ declare namespace Phaser {
              * Internal value to allow Containers to be used for input and physics.
              * Do not change this value. It has no effect other than to break things.
              */
-            originX: number;
+            readonly originX: number;
 
             /**
              * Internal value to allow Containers to be used for input and physics.
              * Do not change this value. It has no effect other than to break things.
              */
-            originY: number;
+            readonly originY: number;
 
             /**
              * Internal value to allow Containers to be used for input and physics.
              * Do not change this value. It has no effect other than to break things.
              */
-            displayOriginX: number;
+            readonly displayOriginX: number;
 
             /**
              * Internal value to allow Containers to be used for input and physics.
              * Do not change this value. It has no effect other than to break things.
              */
-            displayOriginY: number;
+            readonly displayOriginY: number;
 
             /**
              * Does this Container exclusively manage its children?
@@ -11830,35 +12110,35 @@ declare namespace Phaser {
             /**
              * The number of Game Objects inside this Container.
              */
-            length: integer;
+            readonly length: integer;
 
             /**
              * Returns the first Game Object within the Container, or `null` if it is empty.
              * 
              * You can move the cursor by calling `Container.next` and `Container.previous`.
              */
-            first: Phaser.GameObjects.GameObject;
+            readonly first: Phaser.GameObjects.GameObject;
 
             /**
              * Returns the last Game Object within the Container, or `null` if it is empty.
              * 
              * You can move the cursor by calling `Container.next` and `Container.previous`.
              */
-            last: Phaser.GameObjects.GameObject;
+            readonly last: Phaser.GameObjects.GameObject;
 
             /**
              * Returns the next Game Object within the Container, or `null` if it is empty.
              * 
              * You can move the cursor by calling `Container.next` and `Container.previous`.
              */
-            next: Phaser.GameObjects.GameObject;
+            readonly next: Phaser.GameObjects.GameObject;
 
             /**
              * Returns the previous Game Object within the Container, or `null` if it is empty.
              * 
              * You can move the cursor by calling `Container.next` and `Container.previous`.
              */
-            previous: Phaser.GameObjects.GameObject;
+            readonly previous: Phaser.GameObjects.GameObject;
 
             /**
              * Destroys this Container, removing it from the Display List.
@@ -24340,19 +24620,19 @@ declare namespace Phaser {
             /**
              * The current active input Pointer.
              */
-            activePointer: Phaser.Input.Pointer;
+            readonly activePointer: Phaser.Input.Pointer;
 
             /**
              * The x coordinates of the ActivePointer based on the first camera in the camera list.
              * This is only safe to use if your game has just 1 non-transformed camera and doesn't use multi-touch.
              */
-            x: number;
+            readonly x: number;
 
             /**
              * The y coordinates of the ActivePointer based on the first camera in the camera list.
              * This is only safe to use if your game has just 1 non-transformed camera and doesn't use multi-touch.
              */
-            y: number;
+            readonly y: number;
 
         }
 
@@ -24456,7 +24736,7 @@ declare namespace Phaser {
                 /**
                  * How far complete is this combo? A value between 0 and 1.
                  */
-                progress: number;
+                readonly progress: number;
 
                 /**
                  * [description]
@@ -25485,9 +25765,8 @@ declare namespace Phaser {
             addToCache(): void;
 
             /**
-             * Adds this file to its target cache upon successful loading and processing.
+             * Called once the file has been added to its cache and is now ready for deletion from the Loader.
              * It will emit a `filecomplete` event from the LoaderPlugin.
-             * This method is often overridden by specific file types.
              */
             pendingDestroy(): void;
 
@@ -25516,51 +25795,157 @@ declare namespace Phaser {
 
         namespace FileTypes {
             /**
-             * [description]
+             * A single Animation JSON File suitable for loading by the Loader.
+             * 
+             * These are created when you use the Phaser.Loader.LoaderPlugin#animation method and are not typically created directly.
+             * 
+             * For documentation about what all the arguments and configuration options mean please see Phaser.Loader.LoaderPlugin#animation.
              */
             class AnimationJSONFile extends Phaser.Loader.File {
                 /**
                  * 
-                 * @param key [description]
-                 * @param url [description]
-                 * @param path [description]
-                 * @param xhrSettings [description]
+                 * @param loader A reference to the Loader that is responsible for this file.
+                 * @param key The key to use for this file, or a file configuration object.
+                 * @param url The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+                 * @param xhrSettings Extra XHR Settings specifically for this file.
+                 * @param dataKey When the JSON file loads only this property will be stored in the Cache.
                  */
-                constructor(key: string, url: string, path: string, xhrSettings?: XHRSettingsObject);
+                constructor(loader: Phaser.Loader.LoaderPlugin, key: string | Phaser.Loader.FileTypes.JSONFileConfig, url?: string, xhrSettings?: XHRSettingsObject, dataKey?: string);
+
+                /**
+                 * Called automatically by Loader.nextFile.
+                 * This method controls what extra work this File does with its loaded data.
+                 */
+                onProcess(): void;
+
+                /**
+                 * Called at the end of the load process, after the Loader has finished all files in its queue.
+                 */
+                onLoadComplete(): void;
 
             }
 
+            type AtlasJSONFileConfig = {
+                /**
+                 * The key of the file. Must be unique within both the Loader and the Texture Manager.
+                 */
+                key: string;
+                /**
+                 * The absolute or relative URL to load the texture image file from.
+                 */
+                textureURL?: string;
+                /**
+                 * The default file extension to use for the image texture if no url is provided.
+                 */
+                textureExtension?: string;
+                /**
+                 * Extra XHR Settings specifically for the texture image file.
+                 */
+                textureXhrSettings?: XHRSettingsObject;
+                /**
+                 * The filename of an associated normal map. It uses the same path and url to load as the texture image.
+                 */
+                normalMap?: string;
+                /**
+                 * The absolute or relative URL to load the atlas json file from. Or a well formed JSON object to use instead.
+                 */
+                atlasURL?: string;
+                /**
+                 * The default file extension to use for the atlas json if no url is provided.
+                 */
+                atlasExtension?: string;
+                /**
+                 * Extra XHR Settings specifically for the atlas json file.
+                 */
+                atlasXhrSettings?: XHRSettingsObject;
+            };
+
             /**
-             * An Atlas JSON File.
+             * A single JSON based Texture Atlas File suitable for loading by the Loader.
+             * 
+             * These are created when you use the Phaser.Loader.LoaderPlugin#atlas method and are not typically created directly.
+             * 
+             * For documentation about what all the arguments and configuration options mean please see Phaser.Loader.LoaderPlugin#atlas.
+             * 
              * https://www.codeandweb.com/texturepacker/tutorials/how-to-create-sprite-sheets-for-phaser3?source=photonstorm
              */
             class AtlasJSONFile extends Phaser.Loader.MultiFile {
                 /**
                  * 
-                 * @param key The key of the file within the loader.
-                 * @param textureURL The url to load the texture file from.
-                 * @param atlasURL The url to load the atlas file from.
-                 * @param path The path of the file.
-                 * @param textureXhrSettings Optional texture file specific XHR settings.
-                 * @param atlasXhrSettings Optional atlas file specific XHR settings.
+                 * @param loader A reference to the Loader that is responsible for this file.
+                 * @param key The key to use for this file, or a file configuration object.
+                 * @param textureURL The absolute or relative URL to load the texture image file from. If undefined or `null` it will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
+                 * @param atlasURL The absolute or relative URL to load the texture atlas json data file from. If undefined or `null` it will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+                 * @param textureXhrSettings An XHR Settings configuration object for the atlas image file. Used in replacement of the Loaders default XHR Settings.
+                 * @param atlasXhrSettings An XHR Settings configuration object for the atlas json file. Used in replacement of the Loaders default XHR Settings.
                  */
-                constructor(key: string, textureURL: string, atlasURL: string, path: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject);
+                constructor(loader: Phaser.Loader.LoaderPlugin, key: string | Phaser.Loader.FileTypes.AtlasJSONFileConfig, textureURL?: string | string[], atlasURL?: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject);
+
+                /**
+                 * Adds this file to its target cache upon successful loading and processing.
+                 */
+                addToCache(): void;
 
             }
 
+            type AtlasXMLFileConfig = {
+                /**
+                 * The key of the file. Must be unique within both the Loader and the Texture Manager.
+                 */
+                key: string;
+                /**
+                 * The absolute or relative URL to load the texture image file from.
+                 */
+                textureURL?: string;
+                /**
+                 * The default file extension to use for the image texture if no url is provided.
+                 */
+                textureExtension?: string;
+                /**
+                 * Extra XHR Settings specifically for the texture image file.
+                 */
+                textureXhrSettings?: XHRSettingsObject;
+                /**
+                 * The filename of an associated normal map. It uses the same path and url to load as the texture image.
+                 */
+                normalMap?: string;
+                /**
+                 * The absolute or relative URL to load the atlas xml file from.
+                 */
+                atlasURL?: string;
+                /**
+                 * The default file extension to use for the atlas xml if no url is provided.
+                 */
+                atlasExtension?: string;
+                /**
+                 * Extra XHR Settings specifically for the atlas xml file.
+                 */
+                atlasXhrSettings?: XHRSettingsObject;
+            };
+
             /**
-             * An XML based Atlas File, such as those created with Shoebox, Starling or Flash.
+             * A single XML based Texture Atlas File suitable for loading by the Loader.
+             * 
+             * These are created when you use the Phaser.Loader.LoaderPlugin#atlasXML method and are not typically created directly.
+             * 
+             * For documentation about what all the arguments and configuration options mean please see Phaser.Loader.LoaderPlugin#atlasXML.
              */
             class AtlasXMLFile extends Phaser.Loader.MultiFile {
                 /**
                  * 
-                 * @param key The key of the file within the loader.
-                 * @param textureURL The url to load the texture file from.
-                 * @param atlasURL The url to load the atlas file from.
-                 * @param textureXhrSettings Optional texture file specific XHR settings.
-                 * @param atlasXhrSettings Optional atlas file specific XHR settings.
+                 * @param loader A reference to the Loader that is responsible for this file.
+                 * @param key The key to use for this file, or a file configuration object.
+                 * @param textureURL The absolute or relative URL to load the texture image file from. If undefined or `null` it will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
+                 * @param atlasURL The absolute or relative URL to load the texture atlas xml data file from. If undefined or `null` it will be set to `<key>.xml`, i.e. if `key` was "alien" then the URL will be "alien.xml".
+                 * @param textureXhrSettings An XHR Settings configuration object for the atlas image file. Used in replacement of the Loaders default XHR Settings.
+                 * @param atlasXhrSettings An XHR Settings configuration object for the atlas xml file. Used in replacement of the Loaders default XHR Settings.
                  */
-                constructor(key: string, textureURL: string, atlasURL: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject);
+                constructor(loader: Phaser.Loader.LoaderPlugin, key: string | Phaser.Loader.FileTypes.AtlasXMLFileConfig, textureURL?: string | string[], atlasURL?: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject);
+
+                /**
+                 * Adds this file to its target cache upon successful loading and processing.
+                 */
+                addToCache(): void;
 
             }
 
@@ -25619,6 +26004,10 @@ declare namespace Phaser {
                  * Extra XHR Settings specifically for this file.
                  */
                 xhrSettings?: XHRSettingsObject;
+                /**
+                 * Optional type to cast the binary file to once loaded. For example, `Uint8Array`.
+                 */
+                dataType?: any;
             };
 
             /**
@@ -25635,8 +26024,9 @@ declare namespace Phaser {
                  * @param key The key to use for this file, or a file configuration object.
                  * @param url The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.bin`, i.e. if `key` was "alien" then the URL will be "alien.bin".
                  * @param xhrSettings Extra XHR Settings specifically for this file.
+                 * @param dataType Optional type to cast the binary file to once loaded. For example, `Uint8Array`.
                  */
-                constructor(loader: Phaser.Loader.LoaderPlugin, key: string | Phaser.Loader.FileTypes.BinaryFileConfig, url?: string, xhrSettings?: XHRSettingsObject);
+                constructor(loader: Phaser.Loader.LoaderPlugin, key: string | Phaser.Loader.FileTypes.BinaryFileConfig, url?: string, xhrSettings?: XHRSettingsObject, dataType?: any);
 
                 /**
                  * Called automatically by Loader.nextFile.
@@ -26264,48 +26654,274 @@ declare namespace Phaser {
             constructor(scene: Phaser.Scene);
 
             /**
-             * Adds an Animation JSON file to the current load queue.
+             * Adds an Animation JSON Data file, or array of Animation JSON files, to the current load queue.
              * 
-             * Note: This method will only be available if the Animation JSON File type has been built into Phaser.
+             * The file is **not** loaded immediately, it is added to a queue ready to be loaded either when the loader starts,
+             * or if it's already running, when the next free load slot becomes available. This means you cannot use the file
+             * immediately after calling this method, but instead must wait for the file to complete.
              * 
-             * The file is **not** loaded immediately after calling this method.
-             * Instead, the file is added to a queue within the Loader, which is processed automatically when the Loader starts.
-             * @param key A unique string to be used as the key to reference this file from the Cache. Must be unique within this file type.
-             * @param url URL of the file. If `undefined` or `null` the url will be set to `<key>.json`,
-             * i.e. if `key` was "alien" then the URL will be "alien.json".
-             * @param xhrSettings File specific XHR settings to be used during the load. These settings are merged with the global Loader XHR settings.
+             * The key must be a unique String. It is used to add the file to the global JSON Cache upon a successful load.
+             * The key should be unique both in terms of files being loaded and files already present in the JSON Cache.
+             * Loading a file using a key that is already taken will result in a warning. If you wish to replace an existing file
+             * then remove it from the JSON Cache first, before loading a new one.
+             * 
+             * Instead of passing arguments you can pass a configuration object, such as:
+             * 
+             * ```javascript
+             * this.load.animation({
+             *     key: 'baddieAnims',
+             *     url: 'files/BaddieAnims.json'
+             * });
+             * ```
+             * 
+             * See the documentation for `Phaser.Loader.FileTypes.JSONFileConfig` for more details.
+             * 
+             * Once the file has finished loading it will automatically be passed to the global Animation Managers `fromJSON` method.
+             * This will parse all of the JSON data and create animation data from it. This process happens at the very end
+             * of the Loader, once every other file in the load queue has finished. The reason for this is to allow you to load
+             * both animation data and the images it relies upon in the same load call.
+             * 
+             * Once the animation data has been parsed you will be able to play animations using that data.
+             * Please see the Animation Manager `fromJSON` method for more details about the format and playback.
+             * 
+             * You can also access the raw animation data from its Cache using its key:
+             * 
+             * ```javascript
+             * this.load.animation('baddieAnims', 'files/BaddieAnims.json');
+             * // and later in your game ...
+             * var data = this.cache.json.get('baddieAnims');
+             * ```
+             * 
+             * If you have specified a prefix in the loader, via `Loader.setPrefix` then this value will be prepended to this files
+             * key. For example, if the prefix was `LEVEL1.` and the key was `Waves` the final key will be `LEVEL1.Waves` and
+             * this is what you would use to retrieve the text from the JSON Cache.
+             * 
+             * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
+             * 
+             * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "data"
+             * and no URL is given then the Loader will set the URL to be "data.json". It will always add `.json` as the extension, although
+             * this can be overridden if using an object instead of method arguments. If you do not desire this action then provide a URL.
+             * 
+             * You can also optionally provide a `dataKey` to use. This allows you to extract only a part of the JSON and store it in the Cache,
+             * rather than the whole file. For example, if your JSON data had a structure like this:
+             * 
+             * ```json
+             * {
+             *     "level1": {
+             *         "baddies": {
+             *             "aliens": {},
+             *             "boss": {}
+             *         }
+             *     },
+             *     "level2": {},
+             *     "level3": {}
+             * }
+             * ```
+             * 
+             * And if you only wanted to create animations from the `boss` data, then you could pass `level1.baddies.boss`as the `dataKey`.
+             * 
+             * Note: The ability to load this type of file will only be available if the JSON File type has been built into Phaser.
+             * It is available in the default build but can be excluded from custom builds.
+             * @param key The key to use for this file, or a file configuration object, or array of them.
+             * @param url The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+             * @param dataKey When the Animation JSON file loads only this property will be stored in the Cache and used to create animation data.
+             * @param xhrSettings An XHR Settings configuration object. Used in replacement of the Loaders default XHR Settings.
              */
-            animation(key: string | any[] | object, url?: string, xhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
+            animation(key: string | Phaser.Loader.FileTypes.JSONFileConfig | Phaser.Loader.FileTypes.JSONFileConfig[], url?: string, dataKey?: string, xhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
 
             /**
-             * Adds a Texture Atlas file to the current load queue.
+             * Adds a JSON based Texture Atlas, or array of atlases, to the current load queue.
              * 
-             * Note: This method will only be available if the Atlas JSON File type has been built into Phaser.
+             * You can call this method from within your Scene's `preload`, along with any other files you wish to load:
+             * ```javascript
+             * function preload ()
+             * {
+             *     this.load.atlas('mainmenu', 'images/MainMenu.png', 'images/MainMenu.json');
+             * }
+             * ```
              * 
-             * The file is **not** loaded immediately after calling this method.
-             * Instead, the file is added to a queue within the Loader, which is processed automatically when the Loader starts.
-             * @param key The key of the file within the loader.
-             * @param textureURL The url to load the texture file from.
-             * @param atlasURL The url to load the atlas file from.
-             * @param textureXhrSettings Optional texture file specific XHR settings.
-             * @param atlasXhrSettings Optional atlas file specific XHR settings.
+             * The file is **not** loaded right away. It is added to a queue ready to be loaded either when the loader starts,
+             * or if it's already running, when the next free load slot becomes available. This happens automatically if you
+             * are calling this from within the Scene's `preload` method, or a related callback. Because the file is queued
+             * it means you cannot use the file immediately after calling this method, but must wait for the file to complete.
+             * The typical flow for a Phaser Scene is that you load assets in the Scene's `preload` method and then when the
+             * Scene's `create` method is called you are guaranteed that all of those assets are ready for use and have been
+             * loaded.
+             * 
+             * If you call this from outside of `preload` then you are responsible for starting the Loader afterwards and monitoring
+             * its events to know when it's safe to use the asset. Please see the Phaser.Loader.LoaderPlugin class for more details.
+             * 
+             * Phaser expects the atlas data to be provided in a JSON file, using either the JSON Hash or JSON Array format.
+             * These files are created by software such as Texture Packer, Shoebox and Adobe Flash / Animate.
+             * If you are using Texture Packer and have enabled multi-atlas support, then please use the Phaser Multi Atlas loader
+             * instead of this one.
+             * 
+             * Phaser can load all common image types: png, jpg, gif and any other format the browser can natively handle.
+             * 
+             * The key must be a unique String. It is used to add the file to the global Texture Manager upon a successful load.
+             * The key should be unique both in terms of files being loaded and files already present in the Texture Manager.
+             * Loading a file using a key that is already taken will result in a warning. If you wish to replace an existing file
+             * then remove it from the Texture Manager first, before loading a new one.
+             * 
+             * Instead of passing arguments you can pass a configuration object, such as:
+             * 
+             * ```javascript
+             * this.load.atlas({
+             *     key: 'mainmenu',
+             *     textureURL: 'images/MainMenu.png',
+             *     atlasURL: 'images/MainMenu.json'
+             * });
+             * ```
+             * 
+             * See the documentation for `Phaser.Loader.FileTypes.AtlasJSONFileConfig` for more details.
+             * 
+             * Instead of passing a URL for the atlas JSON data you can also pass in a well formed JSON object instead.
+             * 
+             * Once the atlas has finished loading you can use frames from it as textures for a Game Object by referencing its key:
+             * 
+             * ```javascript
+             * this.load.atlas('mainmenu', 'images/MainMenu.png', 'images/MainMenu.json');
+             * // and later in your game ...
+             * this.add.image(x, y, 'mainmenu', 'background');
+             * ```
+             * 
+             * To get a list of all available frames within an atlas please consult your Texture Atlas software.
+             * 
+             * If you have specified a prefix in the loader, via `Loader.setPrefix` then this value will be prepended to this files
+             * key. For example, if the prefix was `MENU.` and the key was `Background` the final key will be `MENU.Background` and
+             * this is what you would use to retrieve the image from the Texture Manager.
+             * 
+             * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
+             * 
+             * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
+             * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension, although
+             * this can be overridden if using an object instead of method arguments. If you do not desire this action then provide a URL.
+             * 
+             * Phaser also supports the automatic loading of associated normal maps. If you have a normal map to go with this image,
+             * then you can specify it by providing an array as the `url` where the second element is the normal map:
+             * 
+             * ```javascript
+             * this.load.atlas('mainmenu', [ 'images/MainMenu.png', 'images/MainMenu-n.png' ], 'images/MainMenu.json');
+             * ```
+             * 
+             * Or, if you are using a config object use the `normalMap` property:
+             * 
+             * ```javascript
+             * this.load.atlas({
+             *     key: 'mainmenu',
+             *     textureURL: 'images/MainMenu.png',
+             *     normalMap: 'images/MainMenu-n.png',
+             *     atlasURL: 'images/MainMenu.json'
+             * });
+             * ```
+             * 
+             * The normal map file is subject to the same conditions as the image file with regard to the path, baseURL, CORs and XHR Settings.
+             * Normal maps are a WebGL only feature.
+             * 
+             * Note: The ability to load this type of file will only be available if the Atlas JSON File type has been built into Phaser.
+             * It is available in the default build but can be excluded from custom builds.
+             * @param key The key to use for this file, or a file configuration object, or array of them.
+             * @param textureURL The absolute or relative URL to load the texture image file from. If undefined or `null` it will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
+             * @param atlasURL The absolute or relative URL to load the texture atlas json data file from. If undefined or `null` it will be set to `<key>.json`, i.e. if `key` was "alien" then the URL will be "alien.json".
+             * @param textureXhrSettings An XHR Settings configuration object for the atlas image file. Used in replacement of the Loaders default XHR Settings.
+             * @param atlasXhrSettings An XHR Settings configuration object for the atlas json file. Used in replacement of the Loaders default XHR Settings.
              */
-            atlas(key: string, textureURL: string, atlasURL: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
+            atlas(key: string | Phaser.Loader.FileTypes.AtlasJSONFileConfig | Phaser.Loader.FileTypes.AtlasJSONFileConfig[], textureURL?: string | string[], atlasURL?: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
 
             /**
-             * Adds an XML Texture Atlas file to the current load queue.
+             * Adds an XML based Texture Atlas, or array of atlases, to the current load queue.
              * 
-             * Note: This method will only be available if the Atlas XML File type has been built into Phaser.
+             * You can call this method from within your Scene's `preload`, along with any other files you wish to load:
+             * ```javascript
+             * function preload ()
+             * {
+             *     this.load.atlasXML('mainmenu', 'images/MainMenu.png', 'images/MainMenu.xml');
+             * }
+             * ```
              * 
-             * The file is **not** loaded immediately after calling this method.
-             * Instead, the file is added to a queue within the Loader, which is processed automatically when the Loader starts.
-             * @param key The key of the file within the loader.
-             * @param textureURL The url to load the texture file from.
-             * @param atlasURL The url to load the atlas file from.
-             * @param textureXhrSettings Optional texture file specific XHR settings.
-             * @param atlasXhrSettings Optional atlas file specific XHR settings.
+             * The file is **not** loaded right away. It is added to a queue ready to be loaded either when the loader starts,
+             * or if it's already running, when the next free load slot becomes available. This happens automatically if you
+             * are calling this from within the Scene's `preload` method, or a related callback. Because the file is queued
+             * it means you cannot use the file immediately after calling this method, but must wait for the file to complete.
+             * The typical flow for a Phaser Scene is that you load assets in the Scene's `preload` method and then when the
+             * Scene's `create` method is called you are guaranteed that all of those assets are ready for use and have been
+             * loaded.
+             * 
+             * If you call this from outside of `preload` then you are responsible for starting the Loader afterwards and monitoring
+             * its events to know when it's safe to use the asset. Please see the Phaser.Loader.LoaderPlugin class for more details.
+             * 
+             * Phaser expects the atlas data to be provided in an XML file format.
+             * These files are created by software such as Shoebox and Adobe Flash / Animate.
+             * 
+             * Phaser can load all common image types: png, jpg, gif and any other format the browser can natively handle.
+             * 
+             * The key must be a unique String. It is used to add the file to the global Texture Manager upon a successful load.
+             * The key should be unique both in terms of files being loaded and files already present in the Texture Manager.
+             * Loading a file using a key that is already taken will result in a warning. If you wish to replace an existing file
+             * then remove it from the Texture Manager first, before loading a new one.
+             * 
+             * Instead of passing arguments you can pass a configuration object, such as:
+             * 
+             * ```javascript
+             * this.load.atlasXML({
+             *     key: 'mainmenu',
+             *     textureURL: 'images/MainMenu.png',
+             *     atlasURL: 'images/MainMenu.xml'
+             * });
+             * ```
+             * 
+             * See the documentation for `Phaser.Loader.FileTypes.AtlasXMLFileConfig` for more details.
+             * 
+             * Once the atlas has finished loading you can use frames from it as textures for a Game Object by referencing its key:
+             * 
+             * ```javascript
+             * this.load.atlasXML('mainmenu', 'images/MainMenu.png', 'images/MainMenu.xml');
+             * // and later in your game ...
+             * this.add.image(x, y, 'mainmenu', 'background');
+             * ```
+             * 
+             * To get a list of all available frames within an atlas please consult your Texture Atlas software.
+             * 
+             * If you have specified a prefix in the loader, via `Loader.setPrefix` then this value will be prepended to this files
+             * key. For example, if the prefix was `MENU.` and the key was `Background` the final key will be `MENU.Background` and
+             * this is what you would use to retrieve the image from the Texture Manager.
+             * 
+             * The URL can be relative or absolute. If the URL is relative the `Loader.baseURL` and `Loader.path` values will be prepended to it.
+             * 
+             * If the URL isn't specified the Loader will take the key and create a filename from that. For example if the key is "alien"
+             * and no URL is given then the Loader will set the URL to be "alien.png". It will always add `.png` as the extension, although
+             * this can be overridden if using an object instead of method arguments. If you do not desire this action then provide a URL.
+             * 
+             * Phaser also supports the automatic loading of associated normal maps. If you have a normal map to go with this image,
+             * then you can specify it by providing an array as the `url` where the second element is the normal map:
+             * 
+             * ```javascript
+             * this.load.atlasXML('mainmenu', [ 'images/MainMenu.png', 'images/MainMenu-n.png' ], 'images/MainMenu.xml');
+             * ```
+             * 
+             * Or, if you are using a config object use the `normalMap` property:
+             * 
+             * ```javascript
+             * this.load.atlasXML({
+             *     key: 'mainmenu',
+             *     textureURL: 'images/MainMenu.png',
+             *     normalMap: 'images/MainMenu-n.png',
+             *     atlasURL: 'images/MainMenu.xml'
+             * });
+             * ```
+             * 
+             * The normal map file is subject to the same conditions as the image file with regard to the path, baseURL, CORs and XHR Settings.
+             * Normal maps are a WebGL only feature.
+             * 
+             * Note: The ability to load this type of file will only be available if the Atlas XML File type has been built into Phaser.
+             * It is available in the default build but can be excluded from custom builds.
+             * @param key The key to use for this file, or a file configuration object, or array of them.
+             * @param textureURL The absolute or relative URL to load the texture image file from. If undefined or `null` it will be set to `<key>.png`, i.e. if `key` was "alien" then the URL will be "alien.png".
+             * @param atlasURL The absolute or relative URL to load the texture atlas xml data file from. If undefined or `null` it will be set to `<key>.xml`, i.e. if `key` was "alien" then the URL will be "alien.xml".
+             * @param textureXhrSettings An XHR Settings configuration object for the atlas image file. Used in replacement of the Loaders default XHR Settings.
+             * @param atlasXhrSettings An XHR Settings configuration object for the atlas xml file. Used in replacement of the Loaders default XHR Settings.
              */
-            atlasXML(key: string, textureURL: string, atlasURL: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
+            atlasXML(key: string | Phaser.Loader.FileTypes.AtlasXMLFileConfig | Phaser.Loader.FileTypes.AtlasXMLFileConfig[], textureURL?: string | string[], atlasURL?: string, textureXhrSettings?: XHRSettingsObject, atlasXhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
 
             /**
              * Adds an Audio file to the current load queue.
@@ -26382,9 +26998,10 @@ declare namespace Phaser {
              * It is available in the default build but can be excluded from custom builds.
              * @param key The key to use for this file, or a file configuration object, or array of them.
              * @param url The absolute or relative URL to load this file from. If undefined or `null` it will be set to `<key>.bin`, i.e. if `key` was "alien" then the URL will be "alien.bin".
+             * @param dataType Optional type to cast the binary file to once loaded. For example, `Uint8Array`.
              * @param xhrSettings An XHR Settings configuration object. Used in replacement of the Loaders default XHR Settings.
              */
-            binary(key: string | Phaser.Loader.FileTypes.BinaryFileConfig | Phaser.Loader.FileTypes.BinaryFileConfig[], url?: string, xhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
+            binary(key: string | Phaser.Loader.FileTypes.BinaryFileConfig | Phaser.Loader.FileTypes.BinaryFileConfig[], url?: string, dataType?: any, xhrSettings?: XHRSettingsObject): Phaser.Loader.LoaderPlugin;
 
             /**
              * Adds a Bitmap Font file to the current load queue.
@@ -27122,7 +27739,7 @@ declare namespace Phaser {
             /**
              * The current state of the Loader.
              */
-            state: integer;
+            readonly state: integer;
 
             /**
              * If you want to append a URL before the path of any asset you can set this here.
@@ -31619,7 +32236,7 @@ declare namespace Phaser {
                 /**
                  * [description]
                  */
-                physicsType: integer;
+                readonly physicsType: integer;
 
                 /**
                  * [description]
@@ -31915,22 +32532,22 @@ declare namespace Phaser {
                 /**
                  * [description]
                  */
-                left: number;
+                readonly left: number;
 
                 /**
                  * [description]
                  */
-                right: number;
+                readonly right: number;
 
                 /**
                  * [description]
                  */
-                top: number;
+                readonly top: number;
 
                 /**
                  * [description]
                  */
-                bottom: number;
+                readonly bottom: number;
 
             }
 
@@ -32860,22 +33477,22 @@ declare namespace Phaser {
                 /**
                  * [description]
                  */
-                left: number;
+                readonly left: number;
 
                 /**
                  * [description]
                  */
-                right: number;
+                readonly right: number;
 
                 /**
                  * [description]
                  */
-                top: number;
+                readonly top: number;
 
                 /**
                  * [description]
                  */
-                bottom: number;
+                readonly bottom: number;
 
             }
 
@@ -41763,12 +42380,12 @@ declare namespace Phaser {
             /**
              * Is the Scene Manager actively processing the Scenes list?
              */
-            isProcessing: boolean;
+            readonly isProcessing: boolean;
 
             /**
              * Has the Scene Manager properly started?
              */
-            isBooted: boolean;
+            readonly isBooted: boolean;
 
             /**
              * Process the Scene operations queue.
@@ -42755,46 +43372,46 @@ declare namespace Phaser {
             /**
              * Asset key for the sound.
              */
-            key: string;
+            readonly key: string;
 
             /**
              * Flag indicating if sound is currently playing.
              */
-            isPlaying: boolean;
+            readonly isPlaying: boolean;
 
             /**
              * Flag indicating if sound is currently paused.
              */
-            isPaused: boolean;
+            readonly isPaused: boolean;
 
             /**
              * A property that holds the value of sound's actual playback rate,
              * after its rate and detune values has been combined with global
              * rate and detune values.
              */
-            totalRate: number;
+            readonly totalRate: number;
 
             /**
              * A value representing the duration, in seconds.
              * It could be total sound duration or a marker duration.
              */
-            duration: number;
+            readonly duration: number;
 
             /**
              * The total duration of the sound in seconds.
              */
-            totalDuration: number;
+            readonly totalDuration: number;
 
             /**
              * Object containing markers definitions.
              */
-            markers: {[key: string]:  SoundMarker};
+            readonly markers: {[key: string]:  SoundMarker};
 
             /**
              * Currently playing marker.
              * 'null' if whole sound is playing.
              */
-            currentMarker: SoundMarker;
+            readonly currentMarker: SoundMarker;
 
             /**
              * Adds a marker into the current sound. A marker is represented by name, start time, duration, and optionally config object.
@@ -42886,12 +43503,12 @@ declare namespace Phaser {
             /**
              * Local reference to game.
              */
-            game: Phaser.Game;
+            readonly game: Phaser.Game;
 
             /**
              * Local reference to the JSON Cache, as used by Audio Sprites.
              */
-            jsonCache: Phaser.Cache.BaseCache;
+            readonly jsonCache: Phaser.Cache.BaseCache;
 
             /**
              * Global mute setting.
@@ -42914,7 +43531,7 @@ declare namespace Phaser {
              * such as a tap, before any sound can be loaded/played on a web page.
              * Set to true if the audio system is currently locked awaiting user interaction.
              */
-            locked: boolean;
+            readonly locked: boolean;
 
             /**
              * Adds a new sound into the sound manager.
@@ -43764,27 +44381,27 @@ declare namespace Phaser {
             /**
              * [description]
              */
-            length: integer;
+            readonly length: integer;
 
             /**
              * [description]
              */
-            first: integer;
+            readonly first: integer;
 
             /**
              * [description]
              */
-            last: integer;
+            readonly last: integer;
 
             /**
              * [description]
              */
-            next: integer;
+            readonly next: integer;
 
             /**
              * [description]
              */
-            previous: integer;
+            readonly previous: integer;
 
         }
 
@@ -44294,33 +44911,33 @@ declare namespace Phaser {
              * The width of the Frame in its un-trimmed, un-padded state, as prepared in the art package,
              * before being packed.
              */
-            realWidth: number;
+            readonly realWidth: number;
 
             /**
              * The height of the Frame in its un-trimmed, un-padded state, as prepared in the art package,
              * before being packed.
              */
-            realHeight: number;
+            readonly realHeight: number;
 
             /**
              * The UV data for this Frame.
              */
-            uvs: object;
+            readonly uvs: object;
 
             /**
              * The radius of the Frame (derived from sqrt(w * w + h * h) / 2)
              */
-            radius: number;
+            readonly radius: number;
 
             /**
              * Is the Frame trimmed or not?
              */
-            trimmed: boolean;
+            readonly trimmed: boolean;
 
             /**
              * The Canvas drawImage data object.
              */
-            canvasData: object;
+            readonly canvasData: object;
 
         }
 
@@ -44518,19 +45135,19 @@ declare namespace Phaser {
             /**
              * The source Canvas Element.
              */
-            canvas: HTMLCanvasElement;
+            readonly canvas: HTMLCanvasElement;
 
             /**
              * The width of the Canvas.
              * This property is read-only, if you wish to change use `setSize`.
              */
-            width: integer;
+            readonly width: integer;
 
             /**
              * The height of the Canvas.
              * This property is read-only, if you wish to change use `setSize`.
              */
-            height: integer;
+            readonly height: integer;
 
             /**
              * [description]
@@ -44902,7 +45519,7 @@ declare namespace Phaser {
             /**
              * Used internally by physics system to perform fast type checks.
              */
-            isTilemap: boolean;
+            readonly isTilemap: boolean;
 
             /**
              * The Tilemap that this layer is a part of.
@@ -46058,24 +46675,24 @@ declare namespace Phaser {
             /**
              * The width of the widest image (in pixels).
              */
-            imageWidth: integer;
+            readonly imageWidth: integer;
 
             /**
              * The height of the tallest image (in pixels).
              */
-            imageHeight: integer;
+            readonly imageHeight: integer;
 
             /**
              * The margin around the images in the collection (in pixels).
              * Use `setSpacing` to change.
              */
-            imageMarge: integer;
+            readonly imageMarge: integer;
 
             /**
              * The spacing between each image in the collection (in pixels).
              * Use `setSpacing` to change.
              */
-            imageSpacing: integer;
+            readonly imageSpacing: integer;
 
             /**
              * Image Collection-specific properties that are typically defined in the Tiled editor.
@@ -46085,12 +46702,12 @@ declare namespace Phaser {
             /**
              * The cached images that are a part of this collection.
              */
-            images: any[];
+            readonly images: any[];
 
             /**
              * The total number of images in the image collection.
              */
-            total: integer;
+            readonly total: integer;
 
             /**
              * Returns true if and only if this image collection contains the given image index.
@@ -46586,7 +47203,7 @@ declare namespace Phaser {
             /**
              * Used internally by physics system to perform fast type checks.
              */
-            isTilemap: boolean;
+            readonly isTilemap: boolean;
 
             /**
              * The Tilemap that this layer is a part of.
@@ -47826,36 +48443,36 @@ declare namespace Phaser {
             /**
              * True if this tile can collide on any of its faces or has a collision callback set.
              */
-            canCollide: boolean;
+            readonly canCollide: boolean;
 
             /**
              * True if this tile can collide on any of its faces.
              */
-            collides: boolean;
+            readonly collides: boolean;
 
             /**
              * True if this tile has any interesting faces.
              */
-            hasInterestingFace: boolean;
+            readonly hasInterestingFace: boolean;
 
             /**
              * The tileset that contains this Tile. This will only return null if accessed from a LayerData
              * instance before the tile is placed within a StaticTilemapLayer or DynamicTilemapLayer.
              */
-            tileset: Phaser.Tilemaps.Tileset;
+            readonly tileset: Phaser.Tilemaps.Tileset;
 
             /**
              * The tilemap layer that contains this Tile. This will only return null if accessed from a
              * LayerData instance before the tile is placed within a StaticTilemapLayer or
              * DynamicTilemapLayer.
              */
-            tilemapLayer: Phaser.Tilemaps.StaticTilemapLayer | Phaser.Tilemaps.DynamicTilemapLayer;
+            readonly tilemapLayer: Phaser.Tilemaps.StaticTilemapLayer | Phaser.Tilemaps.DynamicTilemapLayer;
 
             /**
              * The tilemap that contains this Tile. This will only return null if accessed from a LayerData
              * instance before the tile is placed within a StaticTilemapLayer or DynamicTilemapLayer.
              */
-            tilemap: Phaser.Tilemaps.Tilemap;
+            readonly tilemap: Phaser.Tilemaps.Tilemap;
 
             /**
              * Clears all alpha values associated with this Game Object.
@@ -48978,22 +49595,22 @@ declare namespace Phaser {
             /**
              * The width of each tile (in pixels). Use setTileSize to change.
              */
-            tileWidth: integer;
+            readonly tileWidth: integer;
 
             /**
              * The height of each tile (in pixels). Use setTileSize to change.
              */
-            tileHeight: integer;
+            readonly tileHeight: integer;
 
             /**
              * The margin around the tiles in the sheet (in pixels). Use `setSpacing` to change.
              */
-            tileMargin: integer;
+            readonly tileMargin: integer;
 
             /**
              * The spacing between each the tile in the sheet (in pixels). Use `setSpacing` to change.
              */
-            tileSpacing: integer;
+            readonly tileSpacing: integer;
 
             /**
              * Tileset-specific properties per tile that are typically defined in the Tiled editor in the
@@ -49010,28 +49627,28 @@ declare namespace Phaser {
             /**
              * The cached image that contains the individual tiles. Use setImage to set.
              */
-            image: Phaser.Textures.Texture;
+            readonly image: Phaser.Textures.Texture;
 
             /**
              * The number of tile rows in the the tileset.
              */
-            rows: integer;
+            readonly rows: integer;
 
             /**
              * The number of tile columns in the tileset.
              */
-            columns: integer;
+            readonly columns: integer;
 
             /**
              * The total number of tiles in the tileset.
              */
-            total: integer;
+            readonly total: integer;
 
             /**
              * The look-up table to specific tile image texture coordinates (UV in pixels). Each element
              * contains the coordinates for a tile in an object of the form {x, y}.
              */
-            texCoordinates: object[];
+            readonly texCoordinates: object[];
 
             /**
              * Get a tiles properties that are stored in the Tileset. Returns null if tile index is not
@@ -49189,12 +49806,12 @@ declare namespace Phaser {
             /**
              * The delay in ms at which this TimerEvent fires.
              */
-            delay: number;
+            readonly delay: number;
 
             /**
              * The total number of times this TimerEvent will repeat before finishing.
              */
-            repeat: number;
+            readonly repeat: number;
 
             /**
              * If repeating this contains the current repeat count.
@@ -49204,7 +49821,7 @@ declare namespace Phaser {
             /**
              * True if this TimerEvent loops, otherwise false.
              */
-            loop: boolean;
+            readonly loop: boolean;
 
             /**
              * The callback that will be called when the TimerEvent occurs.
